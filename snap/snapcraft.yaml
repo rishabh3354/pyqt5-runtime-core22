@@ -8,7 +8,6 @@ base: core22
 
 architectures:
   - build-on: [amd64]
-    build-for: [amd64]
 
 slots:
   pyqt6-runtime-core22:

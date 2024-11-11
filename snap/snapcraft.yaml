@@ -37,11 +37,22 @@ parts:
        - fonts-ubuntu
        - xdg-user-dirs
        - samba-libs
-       - mpv
-       - ffmpeg
 
-     override-prime: |
-       set -eux
-       craftctl default
-       cd $CRAFT_PRIME
-       find . -type f,l -name "*.h" -exec rm -f {} \;
+  deps:
+    plugin: nil
+    stage-packages:
+      - mpv
+      - ffmpeg
+
+
+  cleanup:
+    after:
+      - platform
+    plugin: nil
+    override-prime: |
+      set -eux
+      craftctl default
+      cd $CRAFT_PRIME
+      find . -type f,l -name "*.h" -exec rm -f {} \;
+      cd usr/share
+      rm -rf apport bash-completion bug doc doc-base lintian man pam-configs pkgconfig upstart zsh

@@ -16,7 +16,7 @@ slots:
       - /
 
 parts:
-  qt5:
+  platform:
      plugin: nil
      stage-packages:
        - adwaita-icon-theme
@@ -37,15 +37,11 @@ parts:
        - fonts-ubuntu
        - xdg-user-dirs
        - samba-libs
+       - mpv
+       - ffmpeg
 
      override-prime: |
        set -eux
        craftctl default
        cd $CRAFT_PRIME
        find . -type f,l -name "*.h" -exec rm -f {} \;
-
-  deps:
-     plugin: nil
-     stage-packages:
-           - mpv
-           - ffmpeg

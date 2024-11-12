@@ -39,12 +39,8 @@ parts:
        - xdg-user-dirs
        - samba-libs
        - libblas3
-
-  deps:
-    plugin: nil
-    stage-packages:
-      - mpv
-      - ffmpeg
+       - ffmpeg
+       - mpv
 
   cleanup:
     after:

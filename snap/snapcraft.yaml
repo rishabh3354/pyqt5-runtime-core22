@@ -38,6 +38,16 @@ parts:
        - fonts-ubuntu
        - xdg-user-dirs
        - samba-libs
+       - mpv
+       - ffmpeg
+       - libavdevice58      # For libavdevice.so.58
+       - libavfilter7       # For libavfilter.so.7
+       - libavformat58      # For libavformat.so.58
+       - libavcodec58       # For libavcodec.so.58
+       - libpostproc55      # For libpostproc.so.55
+       - libswresample3     # For libswresample.so.3
+       - libswscale5        # For libswscale.so.5
+       - libavutil56        # For libavutil.so.56
 
   deps:
     plugin: nil

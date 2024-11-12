@@ -49,12 +49,6 @@ parts:
        - libswscale5        # For libswscale.so.5
        - libavutil56        # For libavutil.so.56
 
-  deps:
-    plugin: nil
-    stage-packages:
-      - mpv
-      - ffmpeg
-
   cleanup:
     after:
       - platform

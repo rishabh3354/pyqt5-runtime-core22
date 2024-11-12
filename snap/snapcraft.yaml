@@ -17,7 +17,7 @@ slots:
       - /
 
 environment:
-  LD_LIBRARY_PATH: "$LD_LIBRARY_PATH:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/blas:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/lapack"
+  LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/lib/$CRAFT_ARCH_TRIPLET/blas:$SNAP/lib/$CRAFT_ARCH_TRIPLET/lapack
 
 parts:
   platform:

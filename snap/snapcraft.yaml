@@ -1,4 +1,4 @@
-name: pyqt5-runtime-core24
+name: pyqt5-runtime-core22
 version: '24.04'
 summary: PyQt5 runtime stack based on core24.
 description: This snap is to be consumed by various PyQt5 apps which uses Qt 5.15+ Qt provides C++ classes and QML types for rendering GUI.
@@ -12,7 +12,7 @@ platforms:
     build-for: [amd64]
 
 slots:
-  pyqt5-runtime-core24:
+  pyqt5-runtime-core22:
     interface: content
     read:
       - /

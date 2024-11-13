@@ -1,23 +1,21 @@
-name: pyqt5-runtime-core22
-version: '22.04'
-summary: PyQt5 runtime stack based on core22.
+name: pyqt5-runtime-core24
+version: '24.04'
+summary: PyQt5 runtime stack based on core24.
 description: This snap is to be consumed by various PyQt5 apps which uses Qt 5.15+ Qt provides C++ classes and QML types for rendering GUI.
 grade: stable
 confinement: strict
-base: core22
+base: core24
 
-architectures:
-  - build-on: [amd64]
+platforms:
+  amd64:
+    build-on: [amd64]
     build-for: [amd64]
 
 slots:
-  pyqt5-runtime-core22:
+  pyqt5-runtime-core24:
     interface: content
     read:
       - /
-
-environment:
-  LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/lib/$CRAFT_ARCH_TRIPLET/blas:$SNAP/lib/$CRAFT_ARCH_TRIPLET/lapack
 
 parts:
   platform:
@@ -41,7 +39,6 @@ parts:
        - fonts-ubuntu
        - xdg-user-dirs
        - samba-libs
-       - libblas3
        - ffmpeg
        - mpv
 

@@ -35,6 +35,7 @@ parts:
        - qt5-gtk-platformtheme
        - shared-mime-info
        - fonts-ubuntu
+       - qt5-image-formats-plugins
        - xdg-user-dirs
        - samba-libs
        - ffmpeg

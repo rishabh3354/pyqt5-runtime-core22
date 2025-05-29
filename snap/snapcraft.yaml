@@ -1,27 +1,13 @@
 name: pyqt5-runtime-core22
 version: '22.04'
-summary: PyQt5 runtime stack based on core22, now with Qt WebEngine.
-description: |
-  This snap is to be consumed by various PyQt5 apps which uses Qt 5.15+ Qt provides
-  C++ classes and QML types for rendering GUI. This version now includes the
-  necessary runtime libraries for Qt WebEngine.
+summary: PyQt5 runtime stack based on core22.
+description: This snap is to be consumed by various PyQt5 apps which uses Qt 5.15+ Qt provides C++ classes and QML types for rendering GUI.
 grade: stable
 confinement: strict
 base: core22
 
 architectures:
   - build-on: amd64
-
-package-repositories:
-  - type: apt
-    formats: [deb]
-    components: [main]
-    suites: [focal]
-    key-id: C65D51784EDC19A871DBDBB710C56D0DE9977759
-    url: https://ppa.launchpadcontent.net/beineri/opt-qt-5.15.4-focal/ubuntu
-    # IMPORTANT: This PPA is assumed to provide compatible Qt WebEngine packages
-    # for Qt 5.15.4. If you encounter build or runtime issues, verify the PPA's
-    # contents or consider building Qt WebEngine from source within a separate part.
 
 slots:
   pyqt5-runtime-core22:
@@ -33,7 +19,6 @@ parts:
   platform:
      plugin: nil
      stage-packages:
-       # Existing PyQt5 runtime packages
        - adwaita-icon-theme
        - dmz-cursor-theme
        - gnome-themes-standard
@@ -55,76 +40,7 @@ parts:
        - samba-libs
        - ffmpeg
        - mpv
-
-       # Qt WebEngine core runtime libraries
        - libqt5webengine5
-       - libqt5webenginecore5
-       - libqt5webenginewidgets5
-       - qml-module-qtwebengine    # For QML applications using WebEngine
-       - qml-module-qtwebchannel   # For Qt WebChannel functionality
-
-       # Additional Qt modules commonly used with WebEngine or general Qt apps
-       - libqt5network5              # Ensure network module is explicitly staged
-       - libqt5opengl5               # Ensure OpenGL module is explicitly staged
-       - libqt5printsupport5         # For printing functionality
-       - libqt5svg5                  # For SVG rendering
-       - libqt5x11extras5            # X11 specific Qt extensions
-       - qtmultimedia5-plugins       # Qt multimedia plugins
-
-       # GStreamer plugins for multimedia playback in WebEngine
-       - gstreamer1.0-plugins-base
-       - gstreamer1.0-plugins-good
-       - gstreamer1.0-plugins-bad
-       - gstreamer1.0-plugins-ugly
-       - gstreamer1.0-libav        # For common audio/video codecs like H.264, MP3
-       - gstreamer1.0-alsa
-       - gstreamer1.0-pulseaudio
-
-       # Chromium/WebEngine specific runtime dependencies
-       - libnss3                   # Network Security Services
-       - libnspr4                  # Netscape Portable Runtime
-       - libminizip1               # Zip file manipulation
-       - libsecret-1-0             # Secret Service API
-       - libssl3                   # OpenSSL runtime (core22 uses libssl3)
-       - libpulse0                 # PulseAudio runtime
-       - libxcb-randr0             # XCB RandR extension
-       - libxcb-shm0               # XCB Shared Memory extension
-       - libxcb-icccm4             # XCB ICCCM extension
-       - libxcb-keysyms1           # XCB Keysyms extension
-       - libxcb-image0             # XCB Image extension
-       - libxcb-render-util0       # XCB Render Utility extension
-       - libxcb-sync1              # XCB Sync extension
-       - libxcb-xfixes0            # XCB XFixes extension
-       - libfontconfig1            # Font configuration
-       - libfreetype6              # Font rendering
-       - libicu70                  # International Components for Unicode (Chromium's dependency)
-       - libgl1-mesa-glx           # OpenGL runtime
-       - libwebp7                  # UPDATED: Changed from libwebp6 to libwebp7 for core22 compatibility
-       - libwoff1                  # Web Open Font Format
-       - libopus0                  # Opus audio codec
-       - libvpx7                   # VP8/VP9 video codec
-       - libsndfile1               # Sound file reading/writing
-       - libjpeg-turbo8            # JPEG image library
-       - libpng16-16               # PNG image library
-       - libtiff5                  # TIFF image library
-       - libxml2                   # XML parser
-       - libxslt1.1                # XSLT processing
-       - libxcomposite1            # X Composite extension
-       - libxcursor1               # X Cursor management
-       - libxdamage1               # X Damage extension
-       - libxext6                  # X Extensions
-       - libxrandr2                # X RandR extension
-       - libxtst6                  # X Test extension
-       - libxss1                   # X Screen Saver extension
-       - librsvg2-2                # SVG rendering library
-       - libharfbuzz0b             # OpenType text shaping engine
-       - libdbus-1-3               # D-Bus IPC system
-       - zlib1g                    # Compression library
-       - libcanberra-gtk3-0        # Sound event library for GTK3
-       - hicolor-icon-theme        # For icons to display correctly
-       - adwaita-icon-theme        # Common icon theme
-       - yaru-theme-gtk            # Ubuntu's default GTK theme
-       - libxcb-xinerama0          # Often needed for Qt applications on multi-monitor setups
 
   cleanup:
     after:

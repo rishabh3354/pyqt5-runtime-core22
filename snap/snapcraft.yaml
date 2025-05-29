@@ -54,4 +54,5 @@ parts:
        - libqt5qml5
        - qtdeclarative5-dev-tools
        - qml-module-qtwebengine
+       - libqt5webengine-data
 

@@ -9,6 +9,14 @@ base: core22
 architectures:
   - build-on: amd64
 
+package-repositories:
+  - type: apt
+    formats: [deb]
+    components: [main]
+    suites: [focal]
+    key-id: C65D51784EDC19A871DBDBB710C56D0DE9977759
+    url: https://ppa.launchpadcontent.net/beineri/opt-qt-5.15.4-focal/ubuntu
+
 slots:
   pyqt5-runtime-core22:
     interface: content
@@ -40,6 +48,20 @@ parts:
        - samba-libs
        - ffmpeg
        - mpv
+       # QWebEngine and its dependencies
+       - qt515webengine
+       - qt515webchannel
+       - qt515declarative
+       - qt515quickcontrols
+       - qt515quickcontrols2
+       - qt515svg
+       - libnss3  # For SSL/certificates
+       - libxss1
+       - libasound2
+       - libevent-2.1-7
+       - libjsoncpp25
+       - libminizip1
+
 
   cleanup:
     after:

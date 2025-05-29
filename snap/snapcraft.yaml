@@ -56,5 +56,5 @@ parts:
        - qml-module-qtwebengine
 
      organize:
-       usr/share/qt5: $SNAP/qt5-resources  # Move resources to standard location
+       usr/share/qt5: qt5-resources  # Move resources to standard location
 

@@ -99,7 +99,7 @@ parts:
        - libfreetype6              # Font rendering
        - libicu70                  # International Components for Unicode (Chromium's dependency)
        - libgl1-mesa-glx           # OpenGL runtime
-       - libwebp6                  # WebP image format
+       - libwebp7                  # UPDATED: Changed from libwebp6 to libwebp7 for core22 compatibility
        - libwoff1                  # Web Open Font Format
        - libopus0                  # Opus audio codec
        - libvpx7                   # VP8/VP9 video codec

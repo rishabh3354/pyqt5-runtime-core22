@@ -53,4 +53,8 @@ parts:
        - libqt5quickwidgets5
        - libqt5qml5
        - qtdeclarative5-dev-tools
+       - qml-module-qtwebengine
+
+     organize:
+       usr/share/qt5: $SNAP/qt5-resources  # Move resources to standard location
 

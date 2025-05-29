@@ -41,6 +41,9 @@ parts:
        - ffmpeg
        - mpv
        - libqt5webengine5
+       - libqt5webenginewidgets5
+       - libqt5webenginecore5
+       - libqt5webchannel5
 
   cleanup:
     after:

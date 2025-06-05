@@ -42,17 +42,11 @@ parts:
        - mpv
        - freeglut3
        - libgtk2.0-0
-       - python3-pyqt5.qtwebengine
-       - libqt5webengine5
-       - libqt5webenginewidgets5
-       - libqt5webenginecore5
-       - libqt5webchannel5
-       - qtwebengine5-dev  # optional, only if building from source
-       - qtwebengine5-examples
-       - libqt5quick5
-       - libqt5quickwidgets5
-       - libqt5qml5
-       - qtdeclarative5-dev-tools
-       - qml-module-qtwebengine
-       - libqt5webengine-data
 
+  cleanup:
+    after:
+      - platform
+    plugin: nil
+    override-prime: |
+      cd usr/share
+      rm -rf apport bash-completion bug doc doc-base lintian man pam-configs pkgconfig upstart zsh
